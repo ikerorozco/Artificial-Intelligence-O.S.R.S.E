@@ -3,6 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
   - family-names: Orozco_Hernandez
     given-names: Iker
+    orcid: https://orcid.org/0009-0005-6369-1755
 title: "Grobid use on Python"
 version: 1.0.0
 identifiers:
