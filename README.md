@@ -1,15 +1,24 @@
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
-# NOT hard code pdf
-# Mas comentarios en el programa
-# incluye ejemplos
-# usa github copilot
-# hacer un release para mi DOI
-# crear un citation.cff
+#NOT hard code pdf
+#Mas comentarios en el programa
+#incluye ejemplos
+#usa github copilot
+#hacer un release para mi DOI
+#crear un citation.cff
+#crear codemeta generator  JSON-LD file
+
+que necesita read me
+
+
+
+- Description
 
 Este Proyecto nos enseña a crear repositorios con las mejores practicas para poder hacer de este software accesible, encontrable, interoperable y reusable
 se daran las especificaciones basicas para su uso, recomendaciones y formas de buen uso mediante esta guia para que no se pierdan de los detalles de hacer
 y usar este proyecto
+
+- Requirements
 
 Software que se necesita
 
@@ -47,7 +56,7 @@ six==1.17.0
 urllib3==2.3.0
 wordcloud==1.9.4
 
-PROCEDIMIENTO DE DESCARGA
+- Installation instructions
 
 Para empezar se necesitara descargar Docker, la version que se esta usando aqui es docker para esto puedes visitar la pagina
 
@@ -72,7 +81,13 @@ Dale algo de tiempo para que pueda iniciar el servidor con facilidad, podras con
 
 y debe de aparecer grobid preparado y listo para usar
 
+- Execution instructions
+- Running example(s)
+- Preferred citation (who is the main author?)
+- Where to get help
+- Acknowledgements (if any)
 
+  
 @misc{GROBID,
     title = {GROBID},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
