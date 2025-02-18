@@ -1,16 +1,10 @@
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
-#NOT hard code pdf
-#Mas comentarios en el programa
 #incluye ejemplos
 #usa github copilot
 #hacer un release para mi DOI
 #crear un citation.cff
 #crear codemeta generator  JSON-LD file
-
-que necesita read me
-
-
 
 - Description
 
@@ -82,10 +76,41 @@ Dale algo de tiempo para que pueda iniciar el servidor con facilidad, podras con
 y debe de aparecer grobid preparado y listo para usar
 
 - Execution instructions
+
+Para ejecutar se deberan de cumplir con los siguientes requerimientos:
+
+  -Tener Descargados los programas que se quieran ejecutar
+  -Para usarlos se debera de tener en la misma carpeta donde se descargaron los pdf que se quieran procesar
+  -Los pdf son recomendables que esten en ingles y en el caso de el programa "KeyWordCloud.py" contar con un apartado de abstract, de lo contrario no lo         generara
+  -Editar en la parte donde dice "pdf_files" o "pdf_path" el o los nombres de los pdfs que se quieran usar en el programa, simepre con terminacion .pdf
+
+Estos programas se pueden ejecutar tanto en consola como en visual studio o en su editor de codigo con consola de preferencia siempre y cuando haya seguido los pasos de instalacion
+  
 - Running example(s)
+
+  -Para el primer programa se modificara especificamente "pdf_path = "Ejemplo.pdf"" con el pdf de su preferencia
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Abstract extraído:" y las primeras palabras del abstract encontrado
+      ademas de una ventana emergente con el KeyWordCloud 
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "No se encontró un abstract en el documento." el cual nos muestra que el pdf no cuenta con el         apartado abstract
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "Error en la solicitud a GROBID:" el cual nos muestra que probablemente el problema sea la          ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
+  
+  -Para el segundo programa se modificara especificamente "pdf_files = ["Ejemplo.pdf"]" con los pdf de su preferencia
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Ejemplo.pdf : 5 figuras encontradas:" mientras mas pdfs mas respuestas se           mostraran en consola Ademas de una grafica de barras que nos dira cuantas figuras encontro por pdf
+    -si la ejecucion NO fue exitosa se mostrara este mensaje ""Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos         muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de      prueba)
+
+  -Para el tercer programa se modificara especificamente "pdf_files = ["Ejemplo.pdf"]" con los pdf de su preferencia
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Links encontrados en Ejemplo.pdf" y seguido de varios links mientras mas pdfs mas respuestas se mostraran en consola o si el pdf no tiene pdf se mostrara el mensaje "No se encontraron links en las referencias de Ejemplo.pdf"
+    -si la ejecucion NO fue exitosa se mostrara este mensaje ""Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de      prueba)
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "El archivo Ejemplo.pdf no se encontró." el cual quiere decir que el programa no encuentra el archivo con el mismo nombre escrito en el codigo, lo mejor seria revisar que sea el mismo nombre o la terminacion del archivo
+
 - Preferred citation (who is the main author?)
+
+
+
 - Where to get help
-- Acknowledgements (if any)
+
+Si tiene dudas de como usar GROBID, instalacion o llamado a local host 8070, puede visitar su documentacion oficial
+  https://grobid.readthedocs.io/en/latest/
 
   
 @misc{GROBID,
