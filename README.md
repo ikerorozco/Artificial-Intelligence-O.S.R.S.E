@@ -3,8 +3,6 @@
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
 #usa github copilot
-#crear codemeta generator  JSON-LD file
-- Proper metadata (codemeta, license, releases, citation, etc.)
 - Have reproducible instructions on how to set up an environment
 - Do not upload the environment to GitHub
 - Proper documentation (readthedocs + readme)
@@ -22,11 +20,10 @@ Este software utiliza un servidor Grobid en conjunto con un entorno localhost pa
 
 - Requirements
 
-Software que se necesita
+  Grobid (versión recomendada: 0.8.1)
+  Python (versión recomendada: >=3.8)
+  Docker (última versión estable)
 
-  Grobid : (Ultima version)
-  Python : (Ultima version)
-  Docker : (Ultima version)
 
 Ademas de esto se necesitara instalar librerias extras para el uso correcto de este software
 
@@ -60,13 +57,21 @@ wordcloud==1.9.4
 
 - Installation instructions
 
-Para empezar se necesitara descargar Docker, la version que se esta usando aqui es docker para esto puedes visitar la pagina
+Para empezar se necesitara Descarga e instala Docker desde su página oficial según tu sistema operativo:
 
-  https://www.docker.com
+🔗 [Docker Official Website](https://www.docker.com)
 
 a partir de aqui descargaras la version que depende de tu sistema operativo y sigues la descarga como es habitual
 
+Verifica que Docker está instalado correctamente ejecutando:
+
+docker --version
+
 Despues podremos empezar con la descarga de grobid para esto vamos a usar la ultima Stable release
+
+Grobid requiere Java 11 o superior. Puedes verificar si lo tienes con:
+
+-java -version
 
 Escribiremos en consola:
 
@@ -88,6 +93,7 @@ y debe de aparecer grobid preparado y listo para usar
 Para ejecutar se deberan de cumplir con los siguientes requerimientos:
 
   -Tener Descargados los programas que se quieran ejecutar
+  -Tener Docker corriendo con Grobid en http://localhost:8070. 
   -Para usarlos se debera de tener en la misma carpeta donde se descargaron los pdf que se quieran procesar
   -Los pdf son recomendables que esten en ingles y en el caso de el programa "KeyWordCloud.py" contar con un apartado de abstract, de lo contrario no lo         generara
   -Editar en la parte donde dice "pdf_files" o "pdf_path" el o los nombres de los pdfs que se quieran usar en el programa, simepre con terminacion .pdf
