@@ -4,7 +4,6 @@
 Repositorio creado para la ver los cambios realizados en la materia
 #usa github copilot
 #crear codemeta generator  JSON-LD file
-- Zenodo integration (with a badge in the readme)
 - Proper metadata (codemeta, license, releases, citation, etc.)
 - Have reproducible instructions on how to set up an environment
 - Do not upload the environment to GitHub
