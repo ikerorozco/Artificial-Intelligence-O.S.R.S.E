@@ -1,8 +1,6 @@
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
-#incluye ejemplos
 #usa github copilot
-#crear un citation.cff
 #crear codemeta generator  JSON-LD file
 - Zenodo integration (with a badge in the readme)
 - Proper metadata (codemeta, license, releases, citation, etc.)
@@ -111,8 +109,20 @@ Estos programas se pueden ejecutar tanto en consola como en visual studio o en s
     -si la ejecucion NO fue exitosa se mostrara este mensaje ""Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de      prueba)
     -si la ejecucion NO fue exitosa se mostrara este mensaje "El archivo Ejemplo.pdf no se encontró." el cual quiere decir que el programa no encuentra el archivo con el mismo nombre escrito en el codigo, lo mejor seria revisar que sea el mismo nombre o la terminacion del archivo
 
-- Preferred citation (who is the main author?)
+- Preferred citation 
 
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Orozco_Hernandez
+    given-names: Iker
+    orcid: https://orcid.org/0009-0005-6369-1755
+title: "Grobid use on Python"
+version: 1.0.0
+identifiers:
+  - type: doi
+    value: DOI: 10.5281/zenodo.14911493
+date-released: 2025-03-11
 
 - Where to get help
 
@@ -121,7 +131,6 @@ Si tiene dudas de como usar GROBID, instalacion o llamado a local host 8070, pue
 
 Si tiene alguna duda con el funcionamiento de el codigo python puede escribir su consulta a mi correo electronico
   Ikerorozcoh@gmail.com
-
   
 @misc{GROBID,
     title = {GROBID},
