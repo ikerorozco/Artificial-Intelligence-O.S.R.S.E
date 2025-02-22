@@ -18,6 +18,7 @@ method to your environment setup). Docker compose is optional
 Este Proyecto nos enseña a crear repositorios con las mejores practicas para poder hacer de este software accesible, encontrable, interoperable y reusable
 se daran las especificaciones basicas para su uso, recomendaciones y formas de buen uso mediante esta guia para que no se pierdan de los detalles de hacer
 y usar este proyecto
+Este software utiliza un servidor Grobid en conjunto con un entorno localhost para extraer y procesar información relevante a partir de documentos en formato PDF. Implementa técnicas avanzadas de análisis de texto para generar nubes de palabras clave (Keyword Clouds), identificar y enlistar enlaces presentes en los documentos, así como contar la cantidad de figuras por artículo, facilitando así su análisis y aprovechamiento.
 
 - Requirements
 
