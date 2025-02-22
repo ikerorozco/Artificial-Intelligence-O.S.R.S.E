@@ -8,5 +8,5 @@ title: "Grobid use on Python"
 version: 1.0.0
 identifiers:
   - type: doi
-    value:
+    value: DOI: 10.5281/zenodo.14911493
 date-released: 2025-03-11
