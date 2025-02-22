@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/924684829.svg)](https://doi.org/10.5281/zenodo.14911491)
+
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
 #usa github copilot
