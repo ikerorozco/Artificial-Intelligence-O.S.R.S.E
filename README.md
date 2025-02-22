@@ -5,6 +5,15 @@ Repositorio creado para la ver los cambios realizados en la materia
 #hacer un release para mi DOI
 #crear un citation.cff
 #crear codemeta generator  JSON-LD file
+- Zenodo integration (with a badge in the readme)
+- Proper metadata (codemeta, license, releases, citation, etc.)
+- Have reproducible instructions on how to set up an environment
+- Do not upload the environment to GitHub
+- Proper documentation (readthedocs + readme)
+- Remember to include both installation methods (env + docker)
+- Tests
+- Dockerfile + docker run instructions (this is an alternative installation
+method to your environment setup). Docker compose is optional
 
 - Description
 
@@ -104,7 +113,6 @@ Estos programas se pueden ejecutar tanto en consola como en visual studio o en s
     -si la ejecucion NO fue exitosa se mostrara este mensaje "El archivo Ejemplo.pdf no se encontró." el cual quiere decir que el programa no encuentra el archivo con el mismo nombre escrito en el codigo, lo mejor seria revisar que sea el mismo nombre o la terminacion del archivo
 
 - Preferred citation (who is the main author?)
-
 
 
 - Where to get help
