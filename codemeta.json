@@ -1,0 +1,43 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Artificial Intelligence And Open Science In Research Software Engineering",
+    "author": [
+        {
+            "id": "https://orcid.org/0009-0005-6369-1755",
+            "type": "Person",
+            "email": "ikerorozcoh@gmail.com",
+            "familyName": "Orozco_Hernandez",
+            "givenName": "Iker"
+        }
+    ],
+    "codeRepository": "https://github.com/ikerorozco/Artificial-Intelligence-O.S.R.S.E.git",
+    "dateCreated": "2025-01-29",
+    "dateModified": "2025-02-22",
+    "datePublished": "2025-02-22",
+    "description": "Este software utiliza un servidor Grobid en conjunto con un entorno localhost para extraer y procesar información relevante a partir de documentos en formato PDF. Implementa técnicas avanzadas de análisis de texto para generar nubes de palabras clave (Keyword Clouds), identificar y enlistar enlaces presentes en los documentos, así como contar la cantidad de figuras por artículo, facilitando así su análisis y aprovechamiento.",
+    "downloadUrl": "https://zenodo.org/records/14911493",
+    "funder": {
+        "type": "Organization",
+        "name": "Universidad Politecnica de Madrid"
+    },
+    "identifier": "10.5281/zenodo.14911493",
+    "keywords": "GROBID",
+    "license": "https://spdx.org/licenses/GPL-3.0",
+    "name": "Grobid use with Python",
+    "operatingSystem": [
+        "Windows",
+        "Linux",
+        "Mac"
+    ],
+    "programmingLanguage": "Python 3",
+    "releaseNotes": "Esta es la primera versión estable del proyecto, que incluye todas las funcionalidades básicas y ha sido validada con pruebas para garantizar su correcto funcionamiento.\n\nNovedades y Características\n\nImplementación de las funciones principales.\nOptimización del código y modularización.\nDocumentación prototipo (README.md ).",
+    "softwareRequirements": [
+        "Grobid",
+        "Docker",
+        "Dependencias utilizadas: Request, WordCloud"
+    ],
+    "version": "1.0.0",
+    "developmentStatus": "active",
+    "referencePublication": "https://doi.org/10.5281/zenodo.14911491"
+}
