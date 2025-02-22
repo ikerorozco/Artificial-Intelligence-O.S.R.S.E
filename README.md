@@ -2,7 +2,6 @@
 Repositorio creado para la ver los cambios realizados en la materia
 #incluye ejemplos
 #usa github copilot
-#hacer un release para mi DOI
 #crear un citation.cff
 #crear codemeta generator  JSON-LD file
 - Zenodo integration (with a badge in the readme)
