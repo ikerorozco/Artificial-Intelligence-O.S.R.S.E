@@ -120,6 +120,9 @@ Estos programas se pueden ejecutar tanto en consola como en visual studio o en s
 Si tiene dudas de como usar GROBID, instalacion o llamado a local host 8070, puede visitar su documentacion oficial
   https://grobid.readthedocs.io/en/latest/
 
+Si tiene alguna duda con el funcionamiento de el codigo python puede escribir su consulta a mi correo electronico
+  Ikerorozcoh@gmail.com
+
   
 @misc{GROBID,
     title = {GROBID},
