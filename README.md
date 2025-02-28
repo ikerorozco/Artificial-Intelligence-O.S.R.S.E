@@ -10,6 +10,9 @@ Repositorio creado para la ver los cambios realizados en la materia
 - Tests
 - Dockerfile + docker run instructions (this is an alternative installation
 method to your environment setup). Docker compose is optional
+-no hardcodear inputs y outputs
+-cambiar el env para descarga facil
+-dockerfile de grobid y proyecto unidos
 
 - Description
 
@@ -34,6 +37,9 @@ Request
 
 WordCloud
   Descargada desde consola con: pip install wordcloud
+
+  pip install fpdf
+
   
 Si se realizara un pip freeze se tendria que ver de la siguiente manera
 
