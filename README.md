@@ -13,6 +13,7 @@ method to your environment setup). Docker compose is optional
 -no hardcodear inputs y outputs
 -cambiar el env para descarga facil
 -dockerfile de grobid y proyecto unidos
+-crear volumen y comandos en dockerfile
 
 - Description
 
