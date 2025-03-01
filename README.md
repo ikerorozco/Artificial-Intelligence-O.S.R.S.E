@@ -4,7 +4,7 @@
 Repositorio creado para la ver los cambios realizados en la materia
 #usa github copilot
  #Añadir un archivo rationale.md explicando cómo validaste cada funcionalidad.
-- Do not upload the environment to GitHub
+- cambiar documentacion para anaconda
 - Proper documentation (readthedocs + readme)
 - Remember to include both installation methods (env + docker)
 - Tests
