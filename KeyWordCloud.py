@@ -1,38 +1,50 @@
+import os
 import requests
 import xml.etree.ElementTree as ET
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 from collections import Counter
 import re
+import argparse
 
-# Ruta del servidor GROBID
+# Configuración de GROBID
 GROBID_URL = "http://localhost:8070/api/processFulltextDocument"
 
-# Ruta del PDF a procesar (Este es un ejemplo y puede ser modificado en cualquier momento)
-# para que funcione debera de tener el nombre especifico del pdf y la terminacion .pdf 
-# "Ejemplo.pdf" 
-pdf_path = "Boosting Data.pdf"
+# Configuración de argumentos de línea de comandos
+parser = argparse.ArgumentParser(description="Extrae el abstract de PDFs usando GROBID y genera una nube de palabras.")
+parser.add_argument("-i", "--input", default="data", help="Carpeta donde están los archivos PDF (por defecto 'pdfs').")
+
+args = parser.parse_args()
+PDF_DIRECTORY = args.input
+
+# Verifica que la carpeta existe
+if not os.path.exists(PDF_DIRECTORY):
+    print(f" La carpeta '{PDF_DIRECTORY}' no existe.")
+    exit(1)
+
+# Verifica que haya PDFs en la carpeta
+pdf_files = [f for f in os.listdir(PDF_DIRECTORY) if f.endswith(".pdf")]
+
+if not pdf_files:
+    print(" No hay archivos PDF en la carpeta.")
+    exit(1)
+
+# Namespace de TEI (para buscar etiquetas correctamente)
+namespaces = {"tei": "http://www.tei-c.org/ns/1.0"}
 
 # Función para extraer el texto del <abstract> en el XML de GROBID
 def extract_abstract(xml_text):
     try:
-        # Definir namespace de TEI
-        namespaces = {"tei": "http://www.tei-c.org/ns/1.0"}
-
         root = ET.fromstring(xml_text)
-        # Buscar el abstract con el namespace TEI
         abstract = root.find(".//tei:abstract", namespaces)
 
         if abstract is not None:
-            # Extraer los párrafos dentro del abstract
             paragraphs = abstract.findall(".//tei:p", namespaces)
             text = " ".join(p.text for p in paragraphs if p.text)  # Une los textos de <p>
             return text.strip() if text else None  # Devuelve None si está vacío
         return None
     except ET.ParseError:
         return None
-
-
 
 # Función para limpiar texto y contar palabras clave
 def process_text(text):
@@ -48,35 +60,34 @@ def process_text(text):
     
     return Counter(filtered_words)  # Cuenta la frecuencia de palabras
 
-# Enviar PDF a GROBID
-with open(pdf_path, "rb") as pdf_file:
-    files = {"input": pdf_file}
-    response = requests.post(GROBID_URL, files=files, data={"consolidate": "1"})
+# Procesar cada PDF en la carpeta
+for pdf in pdf_files:
+    pdf_path = os.path.join(PDF_DIRECTORY, pdf)
+    print(f" Procesando: {pdf}")
 
-# Procesar respuesta XML
-if response.status_code == 200:
-    abstract_text = extract_abstract(response.text)
-    
-    if abstract_text:
-        print("Abstract extraído:", abstract_text[:500])  # Muestra los primeros 500 caracteres
+    with open(pdf_path, "rb") as pdf_file:
+        response = requests.post(GROBID_URL, files={"input": pdf_file}, data={"consolidate": "1"})
 
-        # Procesar texto y generar nube de palabras basada en frecuencia
-        word_frequencies = process_text(abstract_text)
+    if response.status_code == 200:
+        abstract_text = extract_abstract(response.text)
 
-        wordcloud = WordCloud(
-            width=800,
-            height=400,
-            background_color="white",
-            colormap="viridis",  # Mejor contraste
-            max_words=100
-        ).generate_from_frequencies(word_frequencies)
+        if abstract_text:
+            print(f" Abstract extraído de {pdf}: {abstract_text[:200]}...")  # Muestra un fragmento
+            
+            # Procesar texto y generar nube de palabras
+            word_frequencies = process_text(abstract_text)
+            wordcloud = WordCloud(
+                width=800, height=400, background_color="white",
+                colormap="viridis", max_words=100
+            ).generate_from_frequencies(word_frequencies)
 
-        # Mostrar la nube de palabras
-        plt.figure(figsize=(10, 5))
-        plt.imshow(wordcloud, interpolation="bilinear")
-        plt.axis("off")
-        plt.show()
+            # Mostrar la nube de palabras
+            plt.figure(figsize=(10, 5))
+            plt.imshow(wordcloud, interpolation="bilinear")
+            plt.axis("off")
+            plt.title(f"Nube de palabras - {pdf}")
+            plt.show()
+        else:
+            print(f" No se encontró un abstract en {pdf}.")
     else:
-        print("No se encontró un abstract en el documento.")
-else:
-    print(f"Error en la solicitud a GROBID: {response.status_code}")
+        print(f" Error procesando {pdf}: Código {response.status_code}")
