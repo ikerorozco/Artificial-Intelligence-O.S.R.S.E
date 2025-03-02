@@ -81,9 +81,11 @@ https://www.anaconda.com/download
 
 Despues de esto se debera de clonar este repositorio desde una carpeta a su eleccion, se hara en la linea de comandos y agregando el siguiente comando:
 
-git clone https://github.com/tu_usuario/pdf_processor.git
+git clone https://github.com/ikerorozco/Artificial-Intelligence-O.S.R.S.E.git
 conda env create -f environment.yml
-conda activate pdf_processor
+conda activate "Ejemplo" se puede cambiar el nombre a gusto personal
+
+Ya se tienen todos los requisitos necesarios para usar el codigo, ahora solo se necesita localizar en donde clono su repositorio, crear una carpeta llamada data y dejar ahi los PDFs, si no se quiere llamar asi la carpeta se puede nombrar de otra manera pero se debera de especificar el nombre como se vera en el apartado "Execution instructions"
 
 
 - Execution instructions
@@ -93,27 +95,29 @@ Para ejecutar se deberan de cumplir con los siguientes requerimientos:
   -Tener Descargados los programas que se quieran ejecutar
   -Tener Docker corriendo con Grobid en http://localhost:8070. 
   -Para usarlos se debera de tener en la misma carpeta donde se descargaron los pdf que se quieran procesar
-  -Los pdf son recomendables que esten en ingles y en el caso de el programa "KeyWordCloud.py" contar con un apartado de abstract, de lo contrario no lo         generara
-  -Editar en la parte donde dice "pdf_files" o "pdf_path" el o los nombres de los pdfs que se quieran usar en el programa, simepre con terminacion .pdf
+  -Los pdf son recomendables que esten en ingles y en el caso de el programa "KeyWordCloud.py" contar con un apartado de abstract, de lo contrario funcionara de forma correcta
+  -Dependiendo del programa si no se quiere tener una carpeta llamada data, se puede tambien ejecutar de la siguiente maneta
 
-Estos programas se pueden ejecutar tanto en consola como en visual studio o en su editor de codigo con consola de preferencia siempre y cuando haya seguido los pasos de instalacion
+    python KeyWordCloud.py -i "Nombre de la carpeta" para que el programa funcione de manera optima
+    python FigurasPorArticulo.py -i "Nombre de la carpeta" para que el programa funcione de manera optima
+    python LinksFound.py -i "Nombre de la carpeta" para que el programa funcione de manera optima -o "Nombre de pdf de salida" si no se especifica se dara un predeterminado
+
+Estos programas se pueden ejecutar tanto en consola como en visual studio, con su contenedor en Dcoker (Pasos de instalacion con Docker mas adelante) o en su editor de codigo con consola de preferencia siempre y cuando haya seguido los pasos de instalacion
   
 - Running example(s)
 
-  -Para el primer programa se modificara especificamente "pdf_path = "Ejemplo.pdf"" con el pdf de su preferencia
-    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Abstract extraído:" y las primeras palabras del abstract encontrado
-      ademas de una ventana emergente con el KeyWordCloud 
-    -si la ejecucion NO fue exitosa se mostrara este mensaje "No se encontró un abstract en el documento." el cual nos muestra que el pdf no cuenta con el         apartado abstract
-    -si la ejecucion NO fue exitosa se mostrara este mensaje "Error en la solicitud a GROBID:" el cual nos muestra que probablemente el problema sea la          ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
+  -Para el primer programa se debera de escribir en consola python KeyWordCloud.py -i "Nombre de la carpeta"
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Abstract extraído:" y las primeras palabras del abstract encontrado ademas de una ventana emergente con el KeyWordCloud 
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "No se encontró un abstract en el documento." el cual nos muestra que el pdf no cuenta con el apartado abstract
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "Error en la solicitud a GROBID:" el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
   
-  -Para el segundo programa se modificara especificamente "pdf_files = ["Ejemplo.pdf"]" con los pdf de su preferencia
-    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Ejemplo.pdf : 5 figuras encontradas:" mientras mas pdfs mas respuestas se           mostraran en consola Ademas de una grafica de barras que nos dira cuantas figuras encontro por pdf
-    -si la ejecucion NO fue exitosa se mostrara este mensaje ""Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos         muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de      prueba)
+  -Para el segundo programa se debera de escribir en consola python FigurasPorArticulo.py -i "Nombre de la carpeta" 
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Ejemplo.pdf : 5 figuras encontradas:" mientras mas PDFs en la carpeta mas respuestas se mostraran en consola Ademas de una grafica de barras que nos dira cuantas figuras encontro por pdf
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
 
-  -Para el tercer programa se modificara especificamente "pdf_files = ["Ejemplo.pdf"]" con los pdf de su preferencia
-    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Links encontrados en Ejemplo.pdf" y seguido de varios links mientras mas pdfs mas respuestas se mostraran en consola o si el pdf no tiene pdf se mostrara el mensaje "No se encontraron links en las referencias de Ejemplo.pdf"
-    -si la ejecucion NO fue exitosa se mostrara este mensaje ""Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de      prueba)
-    -si la ejecucion NO fue exitosa se mostrara este mensaje "El archivo Ejemplo.pdf no se encontró." el cual quiere decir que el programa no encuentra el archivo con el mismo nombre escrito en el codigo, lo mejor seria revisar que sea el mismo nombre o la terminacion del archivo
+  -Para el tercer programa se debera de escribir en consola python LinksFound.py -i "Nombre de la carpeta" -o "Nombre de pdf de salida" 
+    -si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Links encontrados en Ejemplo.pdf" y seguido un valor numerico, mientras mas pdfs mas respuestas se mostraran en consola o si el pdf no tiene pdf se mostrara el mensaje "No se encontraron links en las referencias de Ejemplo.pdf"
+    -si la ejecucion NO fue exitosa se mostrara este mensaje "Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
 
 - Preferred citation 
 
