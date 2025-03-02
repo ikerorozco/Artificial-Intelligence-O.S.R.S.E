@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinksFound module &mdash; Artificial-Intelligence-O.S.R.S.E 1.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0ed52906"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Artificial-Intelligence-O.S.R.S.E
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">LinksFound module</a></li>
+<li><a class="reference internal" href="#linksfound">LinksFound</a><ul>
+<li><a class="reference internal" href="#descripcion-general">Descripción General</a></li>
+<li><a class="reference internal" href="#requisitos">Requisitos</a></li>
+<li><a class="reference internal" href="#uso-del-script">Uso del Script</a></li>
+<li><a class="reference internal" href="#funcionamiento">Funcionamiento</a></li>
+<li><a class="reference internal" href="#ejemplo-de-salida-en-pdf">Ejemplo de salida en PDF</a></li>
+<li><a class="reference internal" href="#notas">Notas</a></li>
+<li><a class="reference internal" href="#errores-comunes">Errores comunes</a></li>
+<li><a class="reference internal" href="#autor">Autor</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Artificial-Intelligence-O.S.R.S.E</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LinksFound module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/LinksFound.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linksfound-module">
+<h1>LinksFound module<a class="headerlink" href="#linksfound-module" title="Link to this heading"></a></h1>
+</section>
+<section id="linksfound">
+<h1>LinksFound<a class="headerlink" href="#linksfound" title="Link to this heading"></a></h1>
+<section id="descripcion-general">
+<h2>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading"></a></h2>
+<p>Este script extrae los enlaces de las referencias bibliográficas en documentos PDF utilizando GROBID y genera un archivo PDF con la lista de enlaces extraídos.</p>
+</section>
+<section id="requisitos">
+<h2>Requisitos<a class="headerlink" href="#requisitos" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Python 3.x</p></li>
+<li><p>GROBID en ejecución (por defecto en <cite>http://localhost:8070</cite>)</p></li>
+<li><p>Librerías necesarias:
+- <cite>requests</cite>
+- <cite>xml.etree.ElementTree</cite>
+- <cite>fpdf</cite>
+- <cite>argparse</cite></p></li>
+</ul>
+<p>Puedes instalarlas con:
+<code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span> <span class="pre">fpdf</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="uso-del-script">
+<h2>Uso del Script<a class="headerlink" href="#uso-del-script" title="Link to this heading"></a></h2>
+<p>Ejecuta el script desde la línea de comandos:
+<code class="docutils literal notranslate"><span class="pre">`sh</span>
+<span class="pre">python</span> <span class="pre">linksFound.py</span> <span class="pre">-i</span> <span class="pre">&lt;carpeta_con_pdfs&gt;</span> <span class="pre">-o</span> <span class="pre">&lt;nombre_del_pdf_salida&gt;</span>
+<span class="pre">`</span></code>
+Parámetros:
+- <cite>-i</cite>, <cite>–input</cite>: Carpeta donde están los archivos PDF (por defecto <cite>pdfs</cite>).
+- <cite>-o</cite>, <cite>–output</cite>: Nombre del archivo PDF de salida con los enlaces extraídos (por defecto <cite>Enlaces_Extraidos.pdf</cite>).</p>
+</section>
+<section id="funcionamiento">
+<h2>Funcionamiento<a class="headerlink" href="#funcionamiento" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Verifica que la carpeta de entrada exista y contenga archivos PDF.</p></li>
+<li><p>Procesa cada PDF enviándolo a GROBID para extraer sus referencias.</p></li>
+<li><p>Extrae los enlaces de las referencias bibliográficas en el XML de GROBID.</p></li>
+<li><p>Guarda los enlaces en un archivo PDF con el formato:
+- Nombre del documento
+- Lista de enlaces extraídos
+- Indicación si no se encontraron enlaces</p></li>
+</ol>
+</section>
+<section id="ejemplo-de-salida-en-pdf">
+<h2>Ejemplo de salida en PDF<a class="headerlink" href="#ejemplo-de-salida-en-pdf" title="Link to this heading"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+Lista de Enlaces Extraídos
+————————–
+Documento_1.pdf
+<a class="reference external" href="https://doi.org/10.1000/xyz123">https://doi.org/10.1000/xyz123</a>
+<a class="reference external" href="https://arxiv.org/abs/xyz123">https://arxiv.org/abs/xyz123</a></p>
+<p>Documento_2.pdf
+No se encontraron enlaces.
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Si un PDF no contiene enlaces en sus referencias, el archivo de salida indicará “No se encontraron enlaces”.</p></li>
+<li><p>Si GROBID no está en ejecución, el script no podrá procesar los PDFs.</p></li>
+<li><p>La salida se almacena en la misma carpeta de los PDFs, a menos que se especifique otro destino.</p></li>
+</ul>
+</section>
+<section id="errores-comunes">
+<h2>Errores comunes<a class="headerlink" href="#errores-comunes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Error 404 o 500 en GROBID</strong>: Verifica que GROBID esté en ejecución y accesible en <cite>http://localhost:8070</cite>.</p></li>
+<li><p><strong>La carpeta especificada no existe</strong>: Asegúrate de que el directorio de entrada sea correcto.</p></li>
+<li><p><strong>No se encontraron archivos PDF</strong>: Verifica que la carpeta contenga documentos PDF.</p></li>
+</ul>
+</section>
+<section id="autor">
+<h2>Autor<a class="headerlink" href="#autor" title="Link to this heading"></a></h2>
+<p>Desarrollado por Iker Orozco Hernández.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Iker Orozco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

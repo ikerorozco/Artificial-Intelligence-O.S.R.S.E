@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducción &mdash; Artificial-Intelligence-O.S.R.S.E 1.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0ed52906"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Artificial-Intelligence-O.S.R.S.E
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Introducción</a></li>
+<li><a class="reference internal" href="#instalacion">Instalación</a></li>
+<li><a class="reference internal" href="#uso-de-los-scripts">Uso de los Scripts</a></li>
+<li><a class="reference internal" href="#ejemplo-de-uso">Ejemplo de Uso</a></li>
+<li><a class="reference internal" href="#creditos">Créditos</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Artificial-Intelligence-O.S.R.S.E</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introducción</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <hr class="docutils" />
+<p>Bienvenido a la documentación del <strong>Proyecto de Extracción de Datos con GROBID</strong>.
+Este conjunto de herramientas permite extraer información relevante desde archivos PDF, como <strong>resúmenes (abstracts)</strong> y <strong>enlaces de referencias</strong>, utilizando la API de GROBID.</p>
+<nav class="contents local" id="tabla-de-contenidos" role="doc-toc">
+<p class="topic-title">Tabla de Contenidos</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduccion" id="id1">Introducción</a></p></li>
+<li><p><a class="reference internal" href="#instalacion" id="id2">Instalación</a></p></li>
+<li><p><a class="reference internal" href="#uso-de-los-scripts" id="id3">Uso de los Scripts</a></p></li>
+<li><p><a class="reference internal" href="#ejemplo-de-uso" id="id4">Ejemplo de Uso</a></p></li>
+<li><p><a class="reference internal" href="#creditos" id="id5">Créditos</a></p></li>
+</ul>
+</nav>
+<section id="introduccion">
+<h1><a class="toc-backref" href="#tabla-de-contenidos" role="doc-backlink">Introducción</a><a class="headerlink" href="#introduccion" title="Link to this heading"></a></h1>
+<p>Esta documentación cubre el uso de los scripts disponibles en este proyecto para procesar documentos científicos y generar representaciones visuales de datos clave.</p>
+</section>
+<section id="instalacion">
+<h1><a class="toc-backref" href="#tabla-de-contenidos" role="doc-backlink">Instalación</a><a class="headerlink" href="#instalacion" title="Link to this heading"></a></h1>
+<p>Para ejecutar estos scripts, necesitas instalar los siguientes paquetes en tu entorno:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>requests<span class="w"> </span>wordcloud<span class="w"> </span>matplotlib<span class="w"> </span>fpdf
+</pre></div>
+</div>
+<p>Además, asegúrate de tener un servidor GROBID en funcionamiento en <cite>http://localhost:8070</cite>.</p>
+</section>
+<section id="uso-de-los-scripts">
+<h1><a class="toc-backref" href="#tabla-de-contenidos" role="doc-backlink">Uso de los Scripts</a><a class="headerlink" href="#uso-de-los-scripts" title="Link to this heading"></a></h1>
+<p>El proyecto cuenta con las siguientes herramientas:</p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Generador de Nube de Palabras</strong> (<cite>KeyWordCloud.rst</cite>)</dt><dd><ul class="simple">
+<li><p>Extrae el abstract de PDFs.</p></li>
+<li><p>Genera una nube de palabras basada en palabras clave.</p></li>
+</ul>
+</dd>
+<dt><strong>Extractor de Enlaces</strong> (<cite>linksFound.rst</cite>)</dt><dd><ul class="simple">
+<li><p>Extrae enlaces de referencias en los PDFs.</p></li>
+<li><p>Genera un archivo PDF con la lista de enlaces encontrados.</p></li>
+</ul>
+</dd>
+<dt><strong>Extractor de Figuras</strong> (<cite>FigurasPorArticulo.rst</cite>)</dt><dd><ul class="simple">
+<li><p>Busca todas las imagenes de los PDFs.</p></li>
+<li><p>Genera una grafica de barras con la cantidad de imagenes por PDF.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="ejemplo-de-uso">
+<h1><a class="toc-backref" href="#tabla-de-contenidos" role="doc-backlink">Ejemplo de Uso</a><a class="headerlink" href="#ejemplo-de-uso" title="Link to this heading"></a></h1>
+<p>Ejecuta los scripts con la siguiente estructura:</p>
+<p>Para generar una nube de palabras:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>keyword_cloud.py<span class="w"> </span>-i<span class="w"> </span>pdfs/
+</pre></div>
+</div>
+<p>Para extraer enlaces de referencias:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>links_extractor.py<span class="w"> </span>-i<span class="w"> </span>pdfs/<span class="w"> </span>-o<span class="w"> </span>Enlaces_Extraidos.pdf
+</pre></div>
+</div>
+</section>
+<section id="creditos">
+<h1><a class="toc-backref" href="#tabla-de-contenidos" role="doc-backlink">Créditos</a><a class="headerlink" href="#creditos" title="Link to this heading"></a></h1>
+<p>Este proyecto fue desarrollado para facilitar la extracción y análisis de información en documentos científicos.
+Si tienes sugerencias o mejoras, ¡no dudes en contribuir!</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Iker Orozco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FigurasPorArticulo module &mdash; Artificial-Intelligence-O.S.R.S.E 1.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0ed52906"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Artificial-Intelligence-O.S.R.S.E
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">FigurasPorArticulo module</a></li>
+<li><a class="reference internal" href="#figurasporarticulo">FigurasPorArticulo</a><ul>
+<li><a class="reference internal" href="#descripcion-general">Descripción General</a></li>
+<li><a class="reference internal" href="#uso-del-script">Uso del Script</a></li>
+<li><a class="reference internal" href="#dependencias">Dependencias</a></li>
+<li><a class="reference internal" href="#funciones-principales">Funciones Principales</a></li>
+<li><a class="reference internal" href="#ejemplo-de-codigo">Ejemplo de Código</a></li>
+<li><a class="reference internal" href="#mensajes-de-error">Mensajes de Error</a></li>
+<li><a class="reference internal" href="#consideraciones">Consideraciones</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusión</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Artificial-Intelligence-O.S.R.S.E</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">FigurasPorArticulo module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/FigurasPorArticulo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="figurasporarticulo-module">
+<h1>FigurasPorArticulo module<a class="headerlink" href="#figurasporarticulo-module" title="Link to this heading"></a></h1>
+</section>
+<section id="figurasporarticulo">
+<h1>FigurasPorArticulo<a class="headerlink" href="#figurasporarticulo" title="Link to this heading"></a></h1>
+<p>Este módulo permite analizar archivos PDF y extraer la cantidad de figuras contenidas en ellos utilizando el servicio GROBID. Genera una gráfica de barras con el número de figuras detectadas en cada documento.</p>
+<section id="descripcion-general">
+<h2>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading"></a></h2>
+<p>El script procesa una carpeta con archivos PDF, los envía al servicio GROBID para su análisis y extrae la cantidad de figuras presentes en cada documento. Finalmente, genera una gráfica de barras mostrando los resultados.</p>
+</section>
+<section id="uso-del-script">
+<h2>Uso del Script<a class="headerlink" href="#uso-del-script" title="Link to this heading"></a></h2>
+<p>El script puede ejecutarse desde la línea de comandos con la siguiente sintaxis:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>FigurasPorArticulo.py<span class="w"> </span>-i<span class="w"> </span>&lt;ruta_de_la_carpeta_con_pdfs&gt;
+</pre></div>
+</div>
+<p>Si no se especifica una ruta, se tomará la carpeta <cite>pdfs</cite> como directorio por defecto.</p>
+</section>
+<section id="dependencias">
+<h2>Dependencias<a class="headerlink" href="#dependencias" title="Link to this heading"></a></h2>
+<p>Para ejecutar este script, se requieren las siguientes librerías:</p>
+<ul class="simple">
+<li><p><cite>requests</cite> para realizar peticiones HTTP al servicio de GROBID.</p></li>
+<li><p><cite>xml.etree.ElementTree</cite> para parsear el XML devuelto por GROBID.</p></li>
+<li><p><cite>matplotlib</cite> para generar la gráfica de barras.</p></li>
+<li><p><cite>argparse</cite> para manejar argumentos de línea de comandos.</p></li>
+</ul>
+</section>
+<section id="funciones-principales">
+<h2>Funciones Principales<a class="headerlink" href="#funciones-principales" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>count_figures(xml_text)</strong></p>
+<p>Extrae el número de figuras presentes en el XML devuelto por GROBID.</p>
+<p><strong>Parámetros:</strong>
+- <cite>xml_text</cite> (str): Contenido del XML procesado por GROBID.</p>
+<p><strong>Retorno:</strong>
+- (int): Número de figuras encontradas en el documento.</p>
+</li>
+<li><p><strong>Procesamiento de PDFs</strong></p>
+<ul class="simple">
+<li><p>Se verifica que la carpeta especificada exista.</p></li>
+<li><p>Se obtiene la lista de archivos PDF en la carpeta.</p></li>
+<li><p>Cada PDF se envía a GROBID para su análisis.</p></li>
+<li><p>Se extrae el número de figuras por documento y se almacena en un diccionario.</p></li>
+<li><p>Si no se encuentran figuras, el programa finaliza con un mensaje de aviso.</p></li>
+</ul>
+</li>
+<li><p><strong>Generación de Gráfica</strong></p>
+<ul class="simple">
+<li><p>Se construye una gráfica de barras con <cite>matplotlib</cite> mostrando la cantidad de figuras detectadas por documento.</p></li>
+<li><p>Se ajustan etiquetas y formatos para una mejor visualización.</p></li>
+<li><p>Se muestra la gráfica al usuario.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejemplo-de-codigo">
+<h2>Ejemplo de Código<a class="headerlink" href="#ejemplo-de-codigo" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">FigurasPorArticulo</span><span class="w"> </span><span class="kn">import</span> <span class="n">count_figures</span>
+
+<span class="n">xml_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;TEI xmlns=&#39;http://www.tei-c.org/ns/1.0&#39;&gt;</span>
+<span class="s2">&lt;figure&gt;&lt;figDesc&gt;Diagrama 1&lt;/figDesc&gt;&lt;/figure&gt;</span>
+<span class="s2">&lt;figure&gt;&lt;figDesc&gt;Diagrama 2&lt;/figDesc&gt;&lt;/figure&gt;</span>
+<span class="s2">&lt;/TEI&gt;&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_figures</span><span class="p">(</span><span class="n">xml_data</span><span class="p">))</span>  <span class="c1"># Salida esperada: 2</span>
+</pre></div>
+</div>
+</section>
+<section id="mensajes-de-error">
+<h2>Mensajes de Error<a class="headerlink" href="#mensajes-de-error" title="Link to this heading"></a></h2>
+<p>El script maneja varias excepciones y errores posibles:</p>
+<ul class="simple">
+<li><p>Si la carpeta de PDFs no existe, el programa termina con un mensaje de error.</p></li>
+<li><p>Si la carpeta está vacía, se muestra un mensaje y el programa finaliza.</p></li>
+<li><p>Si el servicio de GROBID no responde o devuelve un código de error, se muestra el código de estado correspondiente.</p></li>
+<li><p>Si no se encuentran figuras en ningún documento, el script finaliza sin generar la gráfica.</p></li>
+</ul>
+</section>
+<section id="consideraciones">
+<h2>Consideraciones<a class="headerlink" href="#consideraciones" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Es necesario que GROBID esté corriendo en <cite>http://localhost:8070</cite> para que el script funcione correctamente.</p></li>
+<li><p>Se recomienda instalar las dependencias en un entorno virtual para evitar conflictos de paquetes.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Este módulo es útil para analizar rápidamente archivos PDF en busca de figuras y obtener una representación visual de la cantidad de imágenes en cada documento. Puede adaptarse para realizar análisis más detallados o integrarse en otros sistemas de procesamiento de textos científicos.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Iker Orozco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

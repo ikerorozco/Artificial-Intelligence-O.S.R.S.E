@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeyWordCloud module &mdash; Artificial-Intelligence-O.S.R.S.E 1.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0ed52906"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Artificial-Intelligence-O.S.R.S.E
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">KeyWordCloud module</a></li>
+<li><a class="reference internal" href="#keywordcloud">KeyWordCloud</a><ul>
+<li><a class="reference internal" href="#descripcion-general">Descripción General</a></li>
+<li><a class="reference internal" href="#uso-del-script">Uso del Script</a></li>
+<li><a class="reference internal" href="#dependencias">Dependencias</a></li>
+<li><a class="reference internal" href="#funciones-principales">Funciones Principales</a></li>
+<li><a class="reference internal" href="#flujo-de-ejecucion">Flujo de ejecución</a></li>
+<li><a class="reference internal" href="#ejemplo-de-salida">Ejemplo de salida</a></li>
+<li><a class="reference internal" href="#consideraciones">Consideraciones</a></li>
+<li><a class="reference internal" href="#autor">Autor</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Artificial-Intelligence-O.S.R.S.E</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">KeyWordCloud module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/KeyWordCloud.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="keywordcloud-module">
+<h1>KeyWordCloud module<a class="headerlink" href="#keywordcloud-module" title="Link to this heading"></a></h1>
+</section>
+<section id="keywordcloud">
+<h1>KeyWordCloud<a class="headerlink" href="#keywordcloud" title="Link to this heading"></a></h1>
+<section id="descripcion-general">
+<h2>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading"></a></h2>
+<p>Este módulo permite extraer el abstract de archivos PDF utilizando GROBID y generar una nube de palabras clave a partir del texto obtenido. La nube de palabras se genera mediante la biblioteca <cite>wordcloud</cite>, representando gráficamente la frecuencia de las palabras más relevantes en el texto procesado.</p>
+</section>
+<section id="uso-del-script">
+<h2>Uso del Script<a class="headerlink" href="#uso-del-script" title="Link to this heading"></a></h2>
+<p>Este módulo se ejecuta a través de la línea de comandos y permite especificar la carpeta donde se encuentran los archivos PDF mediante el argumento <cite>-i</cite> o <cite>–input</cite>.</p>
+<p>Ejemplo de ejecución:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">python</span> <span class="pre">KeyWordCloud.py</span> <span class="pre">-i</span> <span class="pre">pdfs</span>
+<span class="pre">`</span></code></p>
+<p>Si no se proporciona el argumento <cite>-i</cite>, por defecto se buscarán archivos en la carpeta <cite>pdfs</cite>.</p>
+</section>
+<section id="dependencias">
+<h2>Dependencias<a class="headerlink" href="#dependencias" title="Link to this heading"></a></h2>
+<p>Para ejecutar este módulo, se requieren las siguientes bibliotecas:</p>
+<ul class="simple">
+<li><p><cite>requests</cite></p></li>
+<li><p><cite>xml.etree.ElementTree</cite></p></li>
+<li><p><cite>wordcloud</cite></p></li>
+<li><p><cite>matplotlib</cite></p></li>
+<li><p><cite>collections.Counter</cite></p></li>
+<li><p><cite>re</cite></p></li>
+<li><p><cite>argparse</cite></p></li>
+</ul>
+</section>
+<section id="funciones-principales">
+<h2>Funciones Principales<a class="headerlink" href="#funciones-principales" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><cite>extract_abstract(xml_text)</cite></p>
+<ul class="simple">
+<li><p>Extrae el texto del abstract desde el XML generado por GROBID.</p></li>
+<li><p>Retorna el texto del abstract si se encuentra, de lo contrario, devuelve <cite>None</cite>.</p></li>
+</ul>
+</li>
+<li><p><cite>process_text(text)</cite></p>
+<ul class="simple">
+<li><p>Convierte el texto en minúsculas y elimina signos de puntuación y números.</p></li>
+<li><p>Filtra palabras irrelevantes usando una lista ampliada de stopwords.</p></li>
+<li><p>Devuelve un <cite>Counter</cite> con la frecuencia de palabras clave.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="flujo-de-ejecucion">
+<h2>Flujo de ejecución<a class="headerlink" href="#flujo-de-ejecucion" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Se carga la lista de archivos PDF en la carpeta de entrada.</p></li>
+<li><p>Cada PDF se envía a GROBID para extraer su estructura en XML.</p></li>
+<li><p>Se obtiene el abstract del documento.</p></li>
+<li><p>Se procesa el texto para eliminar stopwords y obtener palabras clave.</p></li>
+<li><p>Se genera una nube de palabras y se muestra mediante <cite>matplotlib</cite>.</p></li>
+</ol>
+</section>
+<section id="ejemplo-de-salida">
+<h2>Ejemplo de salida<a class="headerlink" href="#ejemplo-de-salida" title="Link to this heading"></a></h2>
+<p>Al ejecutar el código con un conjunto de PDFs, la salida en consola incluirá información como:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">Procesando:</span> <span class="pre">articulo1.pdf</span>
+<span class="pre">Abstract</span> <span class="pre">extraído</span> <span class="pre">de</span> <span class="pre">articulo1.pdf:</span> <span class="pre">&quot;Este</span> <span class="pre">estudio</span> <span class="pre">analiza</span> <span class="pre">la</span> <span class="pre">influencia</span> <span class="pre">de...&quot;</span>
+<span class="pre">Se</span> <span class="pre">genera</span> <span class="pre">una</span> <span class="pre">nube</span> <span class="pre">de</span> <span class="pre">palabras</span> <span class="pre">para</span> <span class="pre">articulo1.pdf.</span>
+<span class="pre">`</span></code></p>
+<p>Además, se mostrará una gráfica con la nube de palabras generada.</p>
+</section>
+<section id="consideraciones">
+<h2>Consideraciones<a class="headerlink" href="#consideraciones" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Asegúrate de que el servicio de GROBID esté en ejecución en <cite>http://localhost:8070/</cite>.</p></li>
+<li><p>Verifica que la carpeta de entrada contiene archivos PDF válidos.</p></li>
+<li><p>Se recomienda ejecutar el script en un entorno con soporte gráfico para visualizar la nube de palabras.</p></li>
+</ul>
+</section>
+<section id="autor">
+<h2>Autor<a class="headerlink" href="#autor" title="Link to this heading"></a></h2>
+<p>Desarrollado por Iker Orozco Hernández.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Iker Orozco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
