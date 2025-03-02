@@ -24,7 +24,7 @@ exclude_patterns = []
 
 master_doc = 'modules'
 # -- Options for HTML output -------------------------------------------------
-html_theme = "sphinx_rtd_theme"
+html_theme = "alabaster" 
 
 
 # -- Autodoc settings --------------------------------------------------------
