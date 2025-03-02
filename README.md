@@ -82,7 +82,9 @@ https://www.anaconda.com/download
 Despues de esto se debera de clonar este repositorio desde una carpeta a su eleccion, se hara en la linea de comandos y agregando el siguiente comando:
 
 git clone https://github.com/ikerorozco/Artificial-Intelligence-O.S.R.S.E.git
+
 conda env create -f environment.yml
+
 conda activate "Ejemplo" se puede cambiar el nombre a gusto personal
 
 Ya se tienen todos los requisitos necesarios para usar el codigo, ahora solo se necesita localizar en donde clono su repositorio, crear una carpeta llamada data y dejar ahi los PDFs, si no se quiere llamar asi la carpeta se puede nombrar de otra manera pero se debera de especificar el nombre como se vera en el apartado "Execution instructions"
