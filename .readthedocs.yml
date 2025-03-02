@@ -9,8 +9,7 @@ build:
   image: "python:3.9"
   os: "ubuntu-20.04"
   tools:
-    python:
-      version: "3.9"
+    python: "3.9"
 
 conda:
   dependencies:
