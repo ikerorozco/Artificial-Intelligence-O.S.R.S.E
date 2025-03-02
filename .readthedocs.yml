@@ -2,9 +2,6 @@
 
 version: 2
 
-python:
-  version: "3.9"
-
 build:
   image: "python:3.9"
   os: "ubuntu-20.04"
