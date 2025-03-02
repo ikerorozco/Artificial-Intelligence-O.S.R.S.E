@@ -3,12 +3,6 @@
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
 - Proper documentation (readthedocs + readme)
-- Remember to include both installation methods (env + docker)
-- Dockerfile + docker run instructions (this is an alternative installation
-method to your environment setup). Docker compose is optional
--cambiar el env para descarga facil
--dockerfile de grobid y proyecto unidos
--crear volumen y comandos en dockerfile
 
 - Description
 
@@ -49,7 +43,7 @@ Todas estas se encuentran en requirements.txt
 
 
 - Installation instructions
-- 
+  
 
 Para empezar se necesitara Descarga e instala Docker desde su página oficial:
 
