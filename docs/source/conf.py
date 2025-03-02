@@ -23,8 +23,8 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'sphinx_rtd_theme'  # Usa un tema profesional
-html_static_path = ['_static']
+html_theme = 'default'
+
 
 # -- Autodoc settings --------------------------------------------------------
 autodoc_default_options = {
