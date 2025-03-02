@@ -22,15 +22,25 @@ El script puede ejecutarse desde la línea de comandos con la siguiente sintaxis
 
 Si no se especifica una ruta, se tomará la carpeta `pdfs` como directorio por defecto.
 
+-Para este programa se debera de escribir en consola python FigurasPorArticulo.py -i "Nombre de la carpeta"
+
+-si la ejecucion fue exitosa se debera de mostrar en consola este mensaje "Ejemplo.pdf : 5 figuras encontradas:" mientras mas PDFs en la carpeta mas respuestas se mostraran en consola Ademas de una grafica de barras que nos dira cuantas figuras encontro por pdf
+
+-si la ejecucion NO fue exitosa se mostrara este mensaje "Error procesando Ejemplo.pdf: Código (codigo asociado al problema en GROBID)." el cual nos muestra que probablemente el problema sea la ejecucion de grobid en localhost 8070 (se recomienda verificar si funciona en su computadora con un pdf de prueba)
 
 Dependencias
 ------------
 Para ejecutar este script, se requieren las siguientes librerías:
 
-- `requests` para realizar peticiones HTTP al servicio de GROBID.
-- `xml.etree.ElementTree` para parsear el XML devuelto por GROBID.
-- `matplotlib` para generar la gráfica de barras.
-- `argparse` para manejar argumentos de línea de comandos.
+fpdf
+
+matplotlib
+
+requests
+
+wordcloud
+
+argparse
 
 
 Funciones Principales
