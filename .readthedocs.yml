@@ -10,7 +10,7 @@ build:
 conda:
   environment: environment.yml
 
-docs_dir: docs
+source_directory: docs
 
 sphinx:
   configuration: docs/conf.py
