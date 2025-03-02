@@ -11,7 +11,7 @@ build:
   image: "python:3.9"  # Usando la imagen de Python 3.9 como base
   os: "ubuntu-20.04"    # Se agrega el sistema operativo, aunque es opcional
   tools:
-    - sphinx  # Indicamos que usaremos Sphinx para la construcción de la documentación
+    sphinx: "4.0"  # Especifica la versión de Sphinx que se debe usar
 
 # Especificar dependencias adicionales
 conda:
