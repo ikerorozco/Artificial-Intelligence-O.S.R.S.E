@@ -9,6 +9,7 @@ python:
 # Definir el entorno de la construcción de la documentación
 build:
   image: "python:3.9"  # Usando la imagen de Python 3.9 como base
+  os: "ubuntu-20.04"    # Se agrega el sistema operativo, aunque es opcional
 
 # Especificar dependencias adicionales
 conda:
@@ -19,7 +20,7 @@ conda:
     - wordcloud
     - fpdf
     - pip:
-      - grobid-client  # Dependencia para interactuar con GROBID 
+      - grobid-client  # Dependencia para interactuar con GROBID
 
 # Especificar la ruta al directorio de tus fuentes de documentación
 # En este caso, los archivos podrían estar en un directorio "docs"
