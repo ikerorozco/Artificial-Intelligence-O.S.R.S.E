@@ -1,0 +1,13 @@
+name: pdf_processor
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - requests
+  - matplotlib
+  - wordcloud
+  - fpdf
+  - pip
+  - pip:
+      - grobid-client
