@@ -1,0 +1,38 @@
+# Este archivo configura la construcción de la documentación en Read the Docs
+
+version: 2
+
+# Definir la versión de Python que utilizará Read the Docs
+python:
+  version: 3.9
+
+# Definir el entorno de la construcción de la documentación
+build:
+  image: "python:3.9"  # Usando la imagen de Python 3.9 como base
+
+# Especificar dependencias adicionales
+conda:
+  dependencies:
+    - python=3.9
+    - requests
+    - matplotlib
+    - wordcloud
+    - fpdf
+    - pip:
+      - grobid-client  # Dependencia para interactuar con GROBID 
+
+# Especificar la ruta al directorio de tus fuentes de documentación
+# En este caso, los archivos podrían estar en un directorio "docs"
+docs_dir: docs
+
+# Especificar la configuración de Sphinx
+sphinx:
+  configuration: docs/conf.py  # Archivo de configuración de Sphinx
+
+# Extra opciones opcionales de configuración de Read the Docs
+extra_requirements:
+  - developer
+
+# Opcional: Definir el directorio de salida de la documentación generada
+output:
+  format: html
