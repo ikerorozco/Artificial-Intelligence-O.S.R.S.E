@@ -4,9 +4,10 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - requests 
+  - requests
   - matplotlib
   - pip
   - pip:
       - fpdf
       - wordcloud
+      - argparse
