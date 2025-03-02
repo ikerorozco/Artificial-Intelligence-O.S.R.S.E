@@ -2,49 +2,50 @@
 # Grobid use with Python
 # Artificial-Intelligence-O.S.R.S.E
 Repositorio creado para la ver los cambios realizados en la materia
-#usa github copilot
- #Añadir un archivo rationale.md explicando cómo validaste cada funcionalidad.
 - cambiar documentacion para anaconda
 - Proper documentation (readthedocs + readme)
 - Remember to include both installation methods (env + docker)
-- Tests
 - Dockerfile + docker run instructions (this is an alternative installation
 method to your environment setup). Docker compose is optional
--no hardcodear inputs y outputs
 -cambiar el env para descarga facil
 -dockerfile de grobid y proyecto unidos
 -crear volumen y comandos en dockerfile
 
 - Description
 
-Este Proyecto nos enseña a crear repositorios con las mejores practicas para poder hacer de este software accesible, encontrable, interoperable y reusable
-se daran las especificaciones basicas para su uso, recomendaciones y formas de buen uso mediante esta guia para que no se pierdan de los detalles de hacer
-y usar este proyecto
-Este software utiliza un servidor Grobid en conjunto con un entorno localhost para extraer y procesar información relevante a partir de documentos en formato PDF. Implementa técnicas avanzadas de análisis de texto para generar nubes de palabras clave (Keyword Clouds), identificar y enlistar enlaces presentes en los documentos, así como contar la cantidad de figuras por artículo, facilitando así su análisis y aprovechamiento.
+Este proyecto está diseñado para enseñar cómo crear repositorios que sigan las mejores prácticas de desarrollo, lo que asegura que el software sea accesible, fácilmente encontrable, interoperable y reusable. A través de este proyecto, aprenderemos cómo estructurar el código de manera adecuada, cómo escribir documentación clara y útil, y cómo seguir los estándares que permiten que el software se utilice de manera eficiente y efectiva en diferentes entornos. Este repositorio no solo está enfocado en el desarrollo técnico, sino también en cómo garantizar que el proyecto sea fácil de mantener y colaborar con otros desarrolladores, promoviendo así la sostenibilidad y el crecimiento a largo plazo.
+
+A lo largo de esta guía, se proporcionarán las especificaciones básicas necesarias para hacer uso de este proyecto, así como recomendaciones clave para asegurar su correcto funcionamiento. Además, se ofrecerán directrices sobre las mejores prácticas que deben seguirse al utilizar este software, asegurándose de que los detalles importantes no se pierdan y que se aproveche al máximo el potencial de la herramienta. Al seguir esta guía, se pretende que los usuarios puedan ejecutar, modificar y extender el software sin dificultad, mejorando la comprensión y aprovechamiento del proyecto.
+
+Este software utiliza un servidor Grobid en conjunto con un entorno de ejecución localhost para extraer y procesar información relevante de documentos en formato PDF. Grobid, que es una herramienta avanzada para la extracción de metadatos y estructuras de documentos académicos, permite analizar artículos científicos y obtener datos valiosos como el número de figuras, las citas, las referencias, y mucho más. A través de este proyecto, implementamos diversas técnicas avanzadas de análisis de texto. Estas funcionalidades facilitan un análisis profundo y exhaustivo de los documentos, ayudando a transformar datos no estructurados en información útil y visualmente accesible.
 
 - Requirements
 
   Grobid (versión recomendada: 0.8.1)
   Python (versión recomendada: >=3.8)
   Docker (última versión estable)
-  Anaconda 
+  Anaconda (última versión estable)
 
 
 Ademas de esto se necesitara instalar librerias extras para el uso correcto de este software
 
 Dependencias utilizadas:
 
--Request
--WordCloud
--fpdf
+fpdf
+matplotlib
+requests
+wordcloud
+argparse
+
+Todas estas se encuentran en requirements.txt
 
 - Installation instructions
 
-Para empezar se necesitara Descarga e instala Docker desde su página oficial según tu sistema operativo:
+Para empezar se necesitara Descarga e instala Docker desde su página oficial:
 
 🔗 [Docker Official Website](https://www.docker.com)
 
-a partir de aqui descargaras la version que depende de tu sistema operativo y sigues la descarga como es habitual
+a partir de aqui se descargara la version, esto depende de tu sistema operativo y se debera de seguir la descarga como se es habitual
 
 Verifica que Docker está instalado correctamente ejecutando:
 
@@ -59,9 +60,12 @@ Grobid requiere Java 11 o superior. Puedes verificar si lo tienes con:
 Escribiremos en consola:
 
   wget https://github.com/kermitt2/grobid/archive/0.8.1.zip
+
+Despues de esto se necesitara ejecutar un 
+
   unzip 0.8.1.zip
 
-Ya que tengamos grobid descomprimido podremos usarlo un server desde Docker con el comando
+Ya que tengamos grobid descomprimido podremos usarlo un server desde Docker escribiendo en la linea de comandos
 
   docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.1
 
@@ -70,6 +74,12 @@ Dale algo de tiempo para que pueda iniciar el servidor con facilidad, podras con
   http://localhost:8070
 
 y debe de aparecer grobid preparado y listo para usar
+
+Despues de esto se debera de descargar la ultima version estable de Conda, la cual permitira descargar sin ningun problema el environment que se necesite, puede encontrar la pagina oficial para descargar en:
+
+https://www.anaconda.com/download
+
+Despues de esto se debera de clonar este repositorio desde una carpeta a su eleccion, se hara en la linea de comandos y agregando el siguiente comando:
 
 git clone https://github.com/tu_usuario/pdf_processor.git
 conda env create -f environment.yml
