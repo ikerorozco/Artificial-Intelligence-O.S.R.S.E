@@ -12,14 +12,7 @@ build:
     python: "3.9"
 
 conda:
-  environment:
-    - python=3.9
-    - requests
-    - matplotlib
-    - wordcloud
-    - fpdf
-    - pip:
-        - grobid-client
+  environment: environment.yml
 
 docs_dir: docs
 
