@@ -22,6 +22,7 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
+master_doc = 'index'
 # -- Options for HTML output -------------------------------------------------
 html_theme = 'default'
 
