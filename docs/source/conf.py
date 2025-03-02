@@ -22,9 +22,9 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-master_doc = 'index'
+master_doc = 'modules'
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'default'
+html_theme = "sphinx_rtd_theme"
 
 
 # -- Autodoc settings --------------------------------------------------------
