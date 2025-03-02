@@ -2,18 +2,16 @@
 
 version: 2
 
-# Definir la versión de Python que utilizará Read the Docs
 python:
-  version: 3.9
+  version: "3.9"
 
-# Definir el entorno de la construcción de la documentación
 build:
-  image: "python:3.9"  # Usando la imagen de Python 3.9 como base
-  os: "ubuntu-20.04"    # Se agrega el sistema operativo, aunque es opcional
+  image: "python:3.9"
+  os: "ubuntu-20.04"
   tools:
-    - python  # Especifica que se usará Python
+    python:
+      version: "3.9"
 
-# Especificar dependencias adicionales
 conda:
   dependencies:
     - python=3.9
@@ -22,20 +20,15 @@ conda:
     - wordcloud
     - fpdf
     - pip:
-      - grobid-client  # Dependencia para interactuar con GROBID
+        - grobid-client
 
-# Especificar la ruta al directorio de tus fuentes de documentación
-# En este caso, los archivos podrían estar en un directorio "docs"
 docs_dir: docs
 
-# Especificar la configuración de Sphinx
 sphinx:
-  configuration: docs/conf.py  # Archivo de configuración de Sphinx
+  configuration: docs/conf.py
 
-# Extra opciones opcionales de configuración de Read the Docs
 extra_requirements:
   - developer
 
-# Opcional: Definir el directorio de salida de la documentación generada
 output:
   format: html
