@@ -18,8 +18,3 @@ exclude_patterns = []
 # -- Master document --------------------------------------------------------
 # Este es el archivo principal que Sphinx debe usar para generar la documentación
 master_doc = 'index'
-
-# -- Options for HTML output -------------------------------------------------
-
-html_theme = 'default'  # Usa el tema por defecto de Sphinx
-html_static_path = ['_static']
