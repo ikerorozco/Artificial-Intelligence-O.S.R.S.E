@@ -21,5 +21,5 @@ master_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'default'  # Usa el tema por defecto de Sphinx
 html_static_path = ['_static']
