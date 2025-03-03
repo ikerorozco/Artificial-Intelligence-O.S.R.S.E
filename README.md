@@ -61,6 +61,8 @@ Verifica que Docker está instalado correctamente ejecutando:
 
 docker --version
 
+Asegurese de que Docker este en ejecucion para la siguiente parte
+
 
 Despues podremos empezar con la descarga de grobid para esto vamos a usar la ultima Stable release
 
@@ -69,6 +71,28 @@ Grobid requiere Java 11 o superior. Puedes verificar si lo tienes con:
 
 
 -java -version
+
+si se tiene java 11 se deberia de mostrar un mensaje parecido a este
+
+openjdk version "11.0.XX"
+
+OpenJDK Runtime Environment
+
+OpenJDK 64-Bit Server VM
+
+
+
+si no se cuenta se puede instalar desde la linea de comandos con
+
+winget search openjdk
+winget install --id Microsoft.OpenJDK.11
+
+
+o si se prefiere con oracle se escribe en linea de comandos
+
+winget search java
+winget install --id Oracle.JDK.11
+
 
 
 Escribiremos en consola:
@@ -109,6 +133,14 @@ Despues de esto se debera de clonar este repositorio desde una carpeta a su elec
 
 git clone https://github.com/ikerorozco/Artificial-Intelligence-O.S.R.S.E.git
 
+se debera de entrar a la carpeta de github recien copiada
+
+
+cd Artificial-Intelligence-O.S.R.S.E
+
+
+y crear el environment deseado
+
 
 conda env create -f environment.yml
 
@@ -118,7 +150,7 @@ conda activate "Ejemplo" se puede cambiar el nombre a gusto personal
 Si los comandos de conda no se pueden ejecutar, es importante que se cambie a la consola especifica que viene con la instalacion de conda, entrar desde consola a la localizacion de la carpeta donde se clono el repositorio y ejecutar estos comandos de conda
 
 
-Ya se tienen todos los requisitos necesarios para usar el codigo, ahora solo se necesita localizar en donde clono su repositorio, crear una carpeta llamada data y dejar ahi los PDFs, si no se quiere llamar asi la carpeta se puede nombrar de otra manera pero se debera de especificar el nombre como se vera en el apartado "Execution instructions"
+Ya se tienen todos los requisitos necesarios para usar el codigo, ahora solo se necesita localizar en donde se clono su repositorio, dentro de la carpeta Artificial-Intelligence-O.S.R.S.E se debe de crear una carpeta llamada data y dejar ahi los PDFs, si no se quiere llamar asi la carpeta se puede nombrar de otra manera pero se debera de especificar el nombre como se vera en el apartado "Execution instructions"
 
 
 
